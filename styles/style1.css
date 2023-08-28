@@ -1,0 +1,4541 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: whitesmoke;
+}
+#wrapper{
+    position: absolute;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background: #fff;
+}
+
+
+/* ===================================== Dashboard Wrapper-left Sidebar ================== */
+
+#wrapper .wrapper-left{
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+#wrapper .wrapper-left .logo{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    border-bottom: 1px solid whitesmoke;
+}
+.wrapper-left .logo .menu-icon{
+    font-size: 30px;
+    cursor: pointer;
+}
+.logo label{
+    font-size: 20px;
+    margin-left: 20px;
+}
+#wrapper .wrapper-left ul{
+    height: 100%;
+    position: fixed;
+    margin-top: 70px;
+    list-style: none;
+    overflow-y: scroll;
+    padding-bottom: 72px;
+    width: 250px;
+}
+.wrapper-left ul::-webkit-scrollbar{
+    width: 0px;
+}
+.wrapper-left ul li{
+    position: relative;
+    padding-left: 10px;
+    height: 80px;
+    padding: 1px;
+}
+.wrapper-left ul li a{
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    padding: 18px 12px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.wrapper-left ul li a .icon{
+    font-size: 30px;
+}
+.wrapper-left ul li a .nav-items{
+    margin-left: 20px;
+    font-size: 18px;
+}
+.wrapper-left ul li a.active{
+    background: #0F52BA;
+    color: #fff;
+}
+.wrapper-left li a:hover .icon,
+.wrapper-left li a:hover .nav-items{
+    color: #fff;
+}
+a:hover{
+    background: #0F52BA;
+}
+a{
+    color: #707070;
+}
+
+
+/* =============================== Dashboard wrapper right ========================= */
+
+.top-icons{
+    position: fixed;
+    background: #fff;
+    height: 68px;
+    width: 100%;
+    margin-left: 250px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+}
+.top-icons form{
+    width: 500px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 370px;
+}
+.top-icons form .search{
+    border-radius: 5px;
+    background: #E5E4E2;
+    margin-left: -1px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form .search input{
+    height: 45px;
+    width: 450px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    background: none;
+}
+form .search .search-icon{
+    font-size: 30px;
+    color: #aaaaaa;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.top-icons .icons{
+    display: flex;
+}
+.top-icons .icons a{
+    text-decoration: none;
+    margin: 10px;
+    background: none;
+    border: 1px solid #aaa;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 50%;
+}
+.top-icons .icons a:nth-child(1):hover{
+    background: #0F52BA;
+    color: #fff;
+    border: none;
+}
+.top-icons .icons a:nth-child(2):hover{
+    background: red;
+    color: #fff;
+    border: none;
+}
+
+/* ======================== Resuable Codes ==================== */
+
+.wrapper-right .item{
+    height: 100vh;
+    /*position: fixed;*/
+    width: 100%;
+    padding: 30px;
+    overflow-y: scroll;
+}
+.wrapper-right .item .dashboard-title{
+    font-size: 19px;
+    color: gray;
+}
+
+.wrapper-right .item:-webkit-scrollbar{
+    width: 0;
+}
+
+.item .sub-title a{
+    text-decoration: none;
+    background: none;
+}
+/* ============================ Dashboard Section Start ===================== */
+
+.item.dashboard{
+    height: 100vh;
+    width: 100%;
+    margin-left: 270px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-right: 50px;
+    padding-bottom: 25px;
+}
+
+.item.dashboard .dashboardcards{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    grid-gap: 20px;
+}
+.dashboardcards .card{
+    background: #fff;
+    border-radius: 10px;
+    width: 255px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+}
+.dashboardcards .card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+.dashboardcards .card .card-content .icon{
+    font-size: 30px;
+}
+.dashboardcards .card .card-content .text{
+    font-size: 18px;
+    margin-top: 20px;
+}
+.dashboardcards .card .count{
+    width: 100%;
+    text-align: right;
+}
+.dashboardcards .card .count .numbercount{
+    font-size: 20px;
+}
+
+.item.dashboard .bottom{
+    margin-top: 30px;
+}
+.item.dashboard .bottom .bottomcards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 83%;
+    padding-bottom: 60px;
+    grid-gap: 20px;
+}
+.bottomcards .bcards{
+    height: 60vh;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 20px;
+}
+.bcards .title{
+    height: 50px;
+    justify-content: center;
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+}
+.bcards .title span{
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: gray;
+}
+/*.item.dashboard{
+    margin-top: 70px;
+    /*position: fixed;*/
+    /*overflow-y: scroll;*/
+    /*padding-bottom: 80px;*
+}*
+
+
+/* ============================= Profile Section ============================= */
+
+.item.profile{
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 260px;
+    padding-bottom: 90px;
+}
+
+.wrapper-right .item.profile::-webkit-scrollbar{
+    width: 0;
+}
+
+.wrapper-right .item .profile-title{
+    font-size: 19px;
+    color: gray;
+}
+
+.profile .personal{
+    height: 450px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 2px #aaaaaa;
+    padding: 8px;
+    text-align: center;
+}
+.personal .personal_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 60px;
+}
+.personal_info label{
+    font-size: 17px;
+    margin-right: 20px;
+}
+.personal img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.personal .btn-update{
+    margin-top: 20px;
+}
+.personal .btn-update a{
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    width: 100px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* ===================== Update Profile Page ================== */
+
+.update-profile{
+    padding: 15px;
+    width: 100%;
+    padding-right: 20px;
+    background: #fff;
+    text-align: center;
+    margin-top: 5px;
+    box-shadow: 0px 1px 2px 2px #aaaaaa;
+    border-radius: 5px;
+}
+
+.update-profile img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.update-profile form{
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    padding-left: 100px;
+}
+form .input-box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+form .input-box .box{
+    height: 45px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+    font-size: 17px;
+}
+form .input-box input{
+    height: 50px;
+    width: 80%;
+    margin-top: 10px;
+    background: #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 17px;
+}
+form .btn{
+    position: relative;
+    margin-top: 100px;
+    margin-left: -500px;
+}
+form .btn input{
+    padding: 15px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.update-profile .error-msg{
+    font-size: 17px;
+    margin: 10px 0;
+    display: block;
+    color: crimson;
+    border-radius: 5px;
+    background: red;
+    padding: 10px;
+    color: #fff;
+}
+
+.item.update{
+    padding-top: 80px;
+    padding-left: 270px;
+}
+
+
+
+
+
+/* ======================= Food Section ========================== */
+
+.item.food{
+    height: 100vh;
+    position: fixed;
+    margin-left: 250px;
+    margin-top: 70px;
+    width: 100%;
+    padding: 8px;
+    /* padding-right: 20px; */
+    overflow-y: scroll;
+}
+
+.item.food .food-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 8px;
+    padding-right: 230px;
+    padding-bottom: 60px;
+}
+.item.food .food-container::-webkit-scrollbar{
+    width: 0;
+}
+.item.food .food-container .filters{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.food-container .filters a{
+    text-decoration: none;
+}
+.food-container .filters a:hover{
+    background: none;
+    text-decoration: underline;
+}
+.filters input{
+    width: 65%;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/* .item.food .food-container .filters .btn{
+    margin-left: 100px;
+} */
+.item.food .food-container .filters .btn a{
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    font-size: 15px;
+}
+
+/* 
+.item.food .food-list-container{
+    padding-right: 215px;
+    padding-bottom: 60px;
+} */
+.item.food .food-list-container table{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+.item.food .food-list-container td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+td img{
+    height: 50px;
+}
+.item.food .food-list-container tr:nth-child(even) {
+    background-color: #dddddd;
+}
+td .td-row{
+    background: none;
+    text-decoration: none;
+    color: black;
+}
+.food-list-container table td .delete-btn{
+    background: red;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+
+
+/* =============== Food Booking Transactions ================= */
+
+
+
+.item.admintrans{
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 250px;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    padding-bottom: 60px;
+    overflow: scroll;
+}
+.item.admintrans .trans{
+    margin-top: 20px;
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 10px;
+    padding-right: 230px;
+}
+.adminfoodtrans{
+    overflow-x: scroll;
+}
+.item.admintrans .adminfoodtrans center{
+    margin-top: 20px;
+}
+.adminfoodtrans table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+.adminfoodtrans table td,th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.adminfoodtrans table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+/* ============  Add restaurants ============== */
+
+.item.res{
+    height: 100vh;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 20px;
+    overflow-y: scroll;
+}
+
+.res-container{
+    margin-top: 15px;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 210px;
+    padding-bottom: 50px;
+}
+.res-container::-webkit-scrollbar{
+    width: 0;
+}
+.res-container label{
+    font-size: 20px;
+}
+
+.res-container .res-details form{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    text-align: left;
+    padding: 20px;
+}
+.res-container form .res-box{
+    display: flex;
+    flex-direction: column;
+}
+.res-box span{
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.res-box input{
+    height: 50px;
+    outline: none;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.res-box input.file{
+    padding: 10px;
+}
+form .add-btn{
+    margin-top: 30px;
+}
+form .add-btn input{
+    background: #0F52BA;
+    padding: 10px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form .add-btn{
+    margin-top: 40px;
+}
+
+
+/* ============================== Packages ======================= */
+
+.item.pack{
+    height: 100vh;
+    position: fixed;
+    margin-left: 250px;
+    margin-top: 70px;
+    width: 100%;
+    padding: 15px;
+    /* padding-right: 20px; */
+    overflow-y: scroll;
+}
+
+.item.pack .pack-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 8px;
+    padding-right: 230px;
+    padding-bottom: 60px;
+}
+.item.pack .pack-container::-webkit-scrollbar{
+    width: 0;
+}
+.item.pack .pack-container .filters{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding: 30px;
+}
+
+.item.pack .pack-container .filters input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+}
+
+.item.pack .pack-container .filters .btn a{
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    font-size: 15px;
+}
+
+/* 
+.item.pack .pack-list-container{
+    padding-right: 215px;
+    padding-bottom: 60px;
+} */
+.item.pack .pack-list-container table{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+.item.pack .pack-list-container td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+
+.item.pack .pack-list-container tr:nth-child(even) {
+    background-color: #dddddd;
+}
+td .td-row{
+    background: none;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ============================== Add Packages ======================= */
+
+.item.add_pack{
+    height: 100vh;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 20px;
+    padding-bottom: 75px;
+    overflow-y: scroll;
+}
+
+.add-pack-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 210px;
+}
+.add-pack-container::-webkit-scrollbar{
+    width: 0;
+}
+.add-pack-container label{
+    font-size: 20px;
+}
+
+.add-pack-container .add-pack-details form{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    text-align: left;
+    padding: 20px;
+}
+.add-pack-container form .add-pack-box{
+    display: flex;
+    flex-direction: column;
+}
+.add-pack-box span{
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.add-pack-box input{
+    height: 50px;
+    outline: none;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.add-pack-box select{
+    height: 50px;
+    outline: none;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form .add-btn{
+    margin-top: 25px;
+}
+form .add-btn input{
+    background: #0F52BA;
+    padding: 10px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pack-delete{
+    background: red;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+.pack-delete:hover{
+    background: red;
+}
+
+
+/* ===================== Destinations ============= */
+
+
+.item.dest{
+    height: 100vh;
+    position: fixed;
+    margin-left: 250px;
+    margin-top: 70px;
+    width: 100%;
+    padding: 15px;
+    /* padding-right: 20px; */
+    overflow-y: scroll;
+}
+
+.item.dest .dest-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 8px;
+    padding-right: 220px;
+    padding-bottom: 60px;
+}
+.item.dest .dest-container::-webkit-scrollbar{
+    width: 0;
+}
+.item.dest .dest-container .filters{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding: 30px;
+}
+
+.item.dest .dest-container .filters input{
+    width: 70%;
+    height: 50px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.item.dest .dest-container .filters .btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.item.dest .dest-container .filters .btn a{
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+/* .item.dest .dest-list-container{
+    padding-right: 215px;
+    padding-bottom: 60px;
+} */
+.item.dest .dest-list-container table{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+.item.dest .dest-list-container td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.item.dest .dest-list-container td a{
+    text-decoration: none;
+    color: #000;
+}
+.item.dest .dest-list-container td a:hover{
+    text-decoration: underline;
+    background: none;
+    color: #0F52BA;
+}
+
+.item.dest .dest-list-container tr:nth-child(even) {
+    background-color: #dddddd;
+}
+td .td-row{
+    background: none;
+    text-decoration: none;
+    color: black;
+}
+.item.dest .dest-list-container table tbody td .deletedest{
+    text-decoration: none;
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+
+
+/* ============================== Add Destinations ======================= */
+
+.item.add_dest{
+    height: 100vh;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 20px;
+    padding-bottom: 75px;
+    overflow-y: scroll;
+}
+
+.add-dest-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 210px;
+}
+.add-dest-container::-webkit-scrollbar{
+    width: 0;
+}
+.add-dest-container label{
+    font-size: 20px;
+}
+
+.add-dest-container .add-dest-details form{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    text-align: left;
+    padding: 20px;
+}
+.add-dest-container form .add-dest-box{
+    display: flex;
+    flex-direction: column;
+}
+.add-dest-box span{
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.add-dest-box input{
+    height: 50px;
+    outline: none;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.add-dest-box select{
+    height: 50px;
+    outline: none;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form .add-btn{
+    margin-top: 25px;
+}
+form .add-btn input{
+    background: #0F52BA;
+    padding: 10px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* ======================= Destinations View Page =============== */
+
+
+
+.item.dest_view{
+    height: 100vh;
+    width: 100%;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    padding: 15px;
+    overflow-y: scroll;
+    padding-bottom: 75px;
+}
+
+.item.dest_view-spl .dest-view{
+    padding: 5px;
+}
+.dest-view-list{
+    width: 100%;
+    padding-right: 220px;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+}
+.dest-view{
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+    width: 100%;
+}
+
+.dest-view .filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.item.dest_view .dest-view .filters span{
+    margin-left: 50px;
+}
+.item.dest_view .dest-view .filters input{
+    margin: 50px;
+    width: 50%;
+    height: 50px;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.item.dest_view .dest-view .filters .btn{
+    margin-left: 250px;
+}
+.item.dest_view .dest-view .filters .btn a{
+    padding: 10px;
+    text-decoration: none;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    font-size: 15px;
+}
+.dest-view-container{
+    width: 100%;
+}
+.dest-view-container .heading{
+    text-align: center;
+}
+.dest-view-container .heading label{
+    font-size: 1.5rem;
+}
+.dest-view-container .content{
+    margin-top: 20px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+.dest-view-container .content .card{
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 1px 2px 2px #aaa;
+}
+.dest-view-container .content .image{
+    height: 200px;
+}
+.dest-view-container .content .image img{
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+}
+.dest-view-container .content .name{
+    margin: 10px;
+    text-align: center;
+    height: 50px;
+}
+.dest-view-container .content .card span{
+    font-size: 1rem;
+}
+
+
+.hot{
+    margin-top: 30px;
+}
+
+.hot .content .price{
+    margin-top: 15px;
+    text-align: center;
+    height: 50px;
+}
+.content .price span{
+    background: #0F52BA;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+
+
+
+/* ============ Add Places according to destinations ================= */
+
+.item.add_place{
+    height: 100vh;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 20px;
+    padding-bottom: 75px;
+    overflow-y: scroll;
+}
+
+.add-place-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 210px;
+}
+.add-place-container::-webkit-scrollbar{
+    width: 0;
+}
+.add-place-container label{
+    font-size: 20px;
+}
+
+.add-place-container .add-place-details form .placedetails{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    text-align: left;
+    padding: 20px;
+}
+form .placedetails .place-box{
+    display: flex;
+    flex-direction: column;
+}
+.place-box select{
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    outline: none;
+}
+.place-box input{
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    outline: none;
+    padding-left: 10px;
+}
+.place-box .inputfile{
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    outline: none;
+    padding: 13px 10px;
+}
+
+
+
+/* ==================== Hotels Page ================== */
+
+.item.hotels{
+    height: 100vh;
+    position: fixed;
+    margin-left: 250px;
+    margin-top: 70px;
+    width: 100%;
+    padding: 15px;
+    /* padding-right: 20px; */
+    overflow-y: scroll;
+}
+.item.hotels .hotels-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 8px;
+    padding-right: 225px;
+    padding-bottom: 40px;
+}
+.item.hotels .hotels-container::-webkit-scrollbar{
+    width: 0;
+}
+.item.hotels .hotels-container .filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.item.hotels .hotels-container .filters a{
+    text-decoration: none;
+}
+
+.item.hotels .hotels-container .filters a:hover{
+    background: none;
+    text-decoration: underline;
+}
+
+.item.hotels .hotels-container .filters input{
+    height: 50px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+    width: 60%;
+    border-radius: 5px;
+}
+.item.hotels .hotels-container .filters .btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: center;
+}
+.item.hotels .hotels-container .filters .btn a{
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    font-size: 15px;
+}
+.item.hotels .hotels-list-container{
+    display: flex;
+    flex-direction: column;
+}
+.card-hotel{
+    margin: 5px;
+}
+.card-hotel .card{
+    background: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 2px 2px #aaa;
+    border-radius: 5px;
+}
+.card-hotel .card{
+    display: flex;
+}
+.item.hotels .hotels-list-container .card-hotel .card .left{
+    height: 250px;
+    width: 100%;
+}
+.item.hotels .hotels-list-container .card-hotel .card .left img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.card-hotel .card .middle{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 250%;
+}
+.card-hotel .card .middle .hname{
+    font-size: 1.2rem;
+}
+.card-hotel .card .middle .hrating{
+    margin-top: 15px;
+}
+.card-hotel .card .middle .hadd{
+    margin-top: 15px;
+}
+.card .middle li{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.card-hotel .card li span{
+    padding-left: 5px;
+}
+.card-hotel .card .right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.card-hotel .card .right .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-hotel .right .hprice{
+    font-size: 1.2rem;
+}
+.card-hotel .card .right .deletebtn a{
+    background: red;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+
+/* ================== Hotel Page Booking Transactions ================= */
+
+
+.item.adminhoteltrans{
+    height: 100vh;
+    width: 100%;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    padding: 8px;
+    overflow-y: scroll;
+}
+.adminhoteltrans .trans-hotel{
+    width: 100%;
+    margin-top: 20px;
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 8px;
+    /* overflow-x: scroll; */
+    padding-right: 230px;
+    padding-bottom: 60px;
+}
+
+.item.adminhoteltrans .trans-hotel center{
+    margin-top: 20px;
+}
+.item.adminhoteltrans .trans-hotel .transhotel{
+    margin-top: 30px;
+    overflow-x: scroll;
+}
+.transhotel table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    margin-top: 20px;
+}
+.transhotel table td,th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.transhotel table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.trans-hotel table td .action-btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+.trans-hotel table td .delete a{
+    background: red;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+
+
+/* =================== Add Hotels Page =================== */
+
+.item.add-hotels{
+    height: 100vh;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 20px;
+    padding-bottom: 75px;
+    overflow-y: scroll;
+}
+
+.add-hotel-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 210px;
+}
+.add-hotel-container::-webkit-scrollbar{
+    width: 0;
+}
+.add-hotel-container label{
+    font-size: 20px;
+}
+
+.add-hotel-container .add-hotel-details form .placedetails{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    text-align: left;
+    padding: 20px;
+}
+
+.item.transport .transport-admin table{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+.item.transport .transport-admin td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+
+.item.transport .transport-admin tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.transport-admin td a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.transport-admin td a:nth-child(1){
+    background: #0F52BA;
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+}
+.transport-admin td a:nth-child(2){
+    background: crimson;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+
+
+
+/* ============  Admin Transportation Page ============== */
+
+.item.transport{
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 250px;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    overflow: scroll;
+}
+.item.transport .transport-admin{
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 8px;
+    padding-right: 230px;
+    padding-bottom: 60px;
+}
+
+
+.transport-admin .filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.item.transport .transport-admin .filters input{
+    width: 80%;
+    height: 50px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.item.transport .transport-admin .filters .btn a{
+    text-decoration: none;
+}
+.item.transport .transport-admin .filters .btn a span{
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/* ======================== Add Transportations ======================== */
+
+
+.item.add-vehicles{
+    height: 100vh;
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 20px;
+    padding-bottom: 75px;
+    overflow-y: scroll;
+}
+
+.add-vehicles-container{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 210px;
+}
+.add-vehicles-container::-webkit-scrollbar{
+    width: 0;
+}
+.add-vehicles-container label{
+    font-size: 20px;
+}
+
+.add-vehicles-container .add-vehicle-details form .placedetails{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    text-align: left;
+    padding: 20px;
+} 
+
+
+
+
+
+/* ============  Admin Transactions Page ============== */
+
+.item.trans{
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 250px;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    padding-bottom: 60px;
+    overflow: scroll;
+}
+.item.trans .trans{
+    margin-top: 20px;
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 10px;
+    padding-right: 230px;
+}
+.item.trans .trans center{
+    margin-top: 20px;
+}
+.trans table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    margin-top: 30px;
+}
+.trans table td,th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.trans table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.item.trans .trans .triptrans{
+    margin-top: 20px;
+    overflow-x: scroll;
+}
+.item.trans .trans .triptrans table td a{
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.item.trans .trans .spltrans{
+    margin-top: 30px;
+    overflow-x: scroll;
+}
+.item.trans .trans .spltrans table a{
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+/* ======================= View Users ====================== */
+
+.item.users{
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    overflow-y: scroll;
+    padding-bottom: 80px;
+}
+.item.users .viewusers{
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 10px;
+    padding-right: 230px;
+}
+.viewusers table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.viewusers table td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.viewusers table tr:nth-child(even){
+    background-color: #dddddd;
+}
+.viewusers table tbody tr:first-child{
+    display: none;
+}
+.viewusers td a.deleteuser{
+    background: red;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* ====================== Media Queries ======================= */
+
+
+@media (max-width: 450px){
+    
+    #wrapper{
+        display: flex;
+    }
+  
+    #wrapper .wrapper-left{
+        width: 270px;
+        left: -100%;
+    }
+    #wrapper.open .wrapper-left{
+        left: 0;
+    }
+    #wrapper .top-icons .logo{
+        display: flex;
+        height: 70px;
+        align-items: center;
+        padding: 20px;
+        position: fixed;
+        border-bottom: 1px solid whitesmoke;
+        margin-left: -270px;
+    }
+    #wrapper .top-icons{
+        position: fixed;
+        display: flex;
+        padding-top: 20px;
+        margin-left: 250px;
+        padding: 0 20px;
+        height: 70px;
+        width: 80%;
+        background: #fff;
+        align-items: center;
+    }
+    
+    
+    .overlay{
+        position: fixed;
+        height: 1000vh;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s ease;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    #wrapper.open ~ .overlay{
+        opacity: 1;
+        left: 270px;
+        pointer-events: auto;
+    }
+
+
+
+
+    
+    .item .sub-title{
+        display: flex;
+    }
+    .item.dashboard{
+        margin-left: -260px;
+        width: 100%;   
+    }
+    .item.dashboard .dashboardcards{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .dashboardcards .card{
+        width: 350px;
+    }
+
+
+
+    .item.profile{
+        margin-left: -250px;
+        margin-top: 70px;
+        width: 100%;
+    }
+    .profile .personal{
+        height: 540px;
+
+    }
+    .personal .personal_info{
+        text-align: left;
+        display: flex;
+        line-height: 80px;
+    }
+    .personal_info label{
+        font-size: 15px;
+        margin-right: 0px;
+    }
+    .personal .image_info img{
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+    .personal .btn-update{
+        margin-top: 70px;
+    }
+    .personal .btn-update input{
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        background: #0F52BA;
+        color: #fff;
+        width: 100px;
+        font-size: 13px;
+    }
+
+
+
+
+    .item.update.sub-title{
+        display: flex;
+    }
+    .item.update .dashboard-title,
+    .item.update .sub-title{
+        margin-left: -260px;
+    }
+    .update-profile{
+        height: 610px;
+        margin-left: -260px;
+        width: 94%;
+    }
+    .update-profile::-webkit-scrollbar{
+        width: 0px;
+    }
+    .update-profile img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    .update-profile form{
+        height: 900px;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 0px;
+    }
+    form .input-box{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    form .input-box .box{
+        height: 50px;
+        width: 100%;
+    }
+    form .input-box input{
+        height: 50px;
+        width: 100%;
+    }
+    form .btn{
+        position: relative;
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+    form .btn input{
+        padding: 15px;
+        border: none;
+        background: #0F52BA;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    .update-profile .error-msg{
+        font-size: 17px;
+        margin: 10px 0;
+        display: block;
+        color: crimson;
+        border-radius: 5px;
+        background: red;
+        padding: 10px;
+        color: #fff;
+    }
+    
+    .item.update{
+        padding-top: 80px;
+        padding-left: 270px;
+    }
+}
+
+
+
+
+
+
+
+/* ==================================== User Page =================================== */
+
+    /* ================== dashboard ================== */
+
+    .item.user-dashboard{
+        height: 100vh;
+        width: 100%;
+        margin-left: 270px;
+        position: fixed;
+        margin-top: 80px;
+        overflow-y: scroll;
+        padding-right: 50px;
+        padding-bottom: 25px;
+    }
+
+    .item.user-dashboard .user-card{
+        margin-top: 20px;
+        width: 60%;
+        display: flex;
+        grid-gap: 20px;
+    }
+    .user-card .card{
+        background: #fff;
+        border-radius: 10px;
+        width: 250px;
+        display: flex;
+        padding: 20px;
+        align-items: center;
+        box-shadow: 2px 1px 5px #aaaaaa;
+    }
+    .user-card .card .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+    }
+    .user-card .card .card-content .icon{
+        font-size: 30px;
+    }
+    .user-card .card .card-content .text{
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .user-card .card .count{
+        width: 100%;
+        text-align: right;
+    }
+    .user-card .card .count .numbercount{
+        font-size: 18px;
+    }
+
+
+
+
+    /* =================== User Profile Page =================== */
+
+    .item.userprofile{
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        width: 100%;
+        padding: 10px;
+    }
+    .item.userprofile::-webkit-scrollbar{
+        width: 0;
+    }
+    .item .dashboard-title{
+        font-size: 19px;
+        color: gray;
+    }
+    
+    .userprofile .personal{
+        /* height: 450px; */
+        margin-top: 10px;
+        background: #fff;
+        box-shadow: 0px 1px 2px 2px #aaaaaa;
+        padding: 8px;
+        text-align: center;
+        padding-right: 230px;
+        padding-bottom: 90px;
+    }
+    .personal .personal_info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        line-height: 60px;
+    }
+    .personal_info label{
+        font-size: 17px;
+        margin-right: 20px;
+    }
+    .personal img{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+    }
+    .personal .btn-update{
+        margin-top: 20px;
+    }
+    .personal .btn-update a{
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        background: #0F52BA;
+        color: #fff;
+        width: 100px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+
+
+    /* ================== User Profile Update page ================= */
+
+    .item.userupdate{
+        height: 100vh;
+        width: 100%;
+        margin-left: 260px;
+        position: fixed;
+        margin-top: 70px;
+        overflow-y: scroll;
+    }
+
+    .userupdate .user-update-profile{
+        padding: 15px;
+        width: 100%;
+        background: #fff;
+        text-align: center;
+        margin-top: 5px;
+        box-shadow: 0px 1px 5px 2px #aaaaaa;
+        padding-right: 230px;
+        padding-bottom: 90px;
+    }
+    
+    .user-update-profile img{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+    }
+    .user-update-profile form{
+        /* height: 500px; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 30px;
+        padding-left: 100px;
+    }
+    form .input-box{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    form .input-box .box{
+        height: 45px;
+        width: 80%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        background: #ccc;
+        border-radius: 5px;
+        outline: none;
+        padding-left: 10px;
+        font-size: 17px;
+    }
+    form .input-box input{
+        height: 50px;
+        width: 80%;
+        margin-top: 10px;
+        background: #ccc;
+        border-radius: 5px;
+        padding: 12px;
+        font-size: 17px;
+    }
+    form .btn{
+        position: relative;
+        margin-top: 100px;
+        margin-left: -500px;
+    }
+    form .btn input{
+        padding: 15px;
+        border: none;
+        background: #0F52BA;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    .update-profile .error-msg{
+        font-size: 17px;
+        margin: 10px 0;
+        display: block;
+        color: crimson;
+        border-radius: 5px;
+        background: red;
+        padding: 10px;
+        color: #fff;
+    }
+    
+    .item.update{
+        padding-top: 80px;
+        padding-left: 270px;
+    }
+
+
+
+    /* ======================== Food Section =================== */
+
+    .item.user-food{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+    .item.user-food .user-food-container{
+        width: 100%;
+        margin-top: 15px;
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding-bottom: 60px;
+        padding-right: 200px;
+    }
+    .item.user-food .user-food-container::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .item.user-food .user-food-container .filters{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .item.user-food .user-food-container .filters a{
+        text-decoration: none;
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .item.user-food .user-food-container .filters a:hover{
+        background: none;
+        text-decoration: underline;
+    }
+
+    .item.user-food .user-food-container .filters span{
+        margin-left: 50px;
+        width: 20%;
+    }
+
+    .item.user-food .user-food-container .filters input{
+        margin: 50px;
+        width: 60%;
+        height: 50px;
+        outline: none;
+        border: 1px solid #aaa;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+    .user-food-list-container{
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .user-food-list-container span{
+        font-size: 18px;
+    }
+    .food-user-card{
+        height: 250px;
+        display: flex;
+        background: #fff;
+        margin: 30px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .food-user-card:hover{
+        background: none;
+    }
+    .food-user-card .left img{
+        height: 250px;
+        border-radius: 5px;
+        width: 300px;
+    }      
+    .food-user-card .right{
+        width: 100%;
+        text-align: left;
+        margin: 5px;
+        margin-left: 20px;
+    }
+    .food-user-card .right .resname,
+    .food-user-card .right .resrat,
+    .food-user-card .right .resaddress,
+    .food-user-card .right .resdish{
+        margin-bottom: 5px;
+    }
+    .food-user-card .right .resname span{
+        font-size: 21px;
+    }
+    .food-user-card .right .resname span a{
+        color: black;
+        text-decoration: none;
+        background: none;
+    }
+    .food-user-card .right .resrat span{
+        color: #ccc;
+    }
+    .food-user-card .right .time{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    /*.user-food-list-container .user-food-card{
+        height: 250px;
+        display: flex;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        align-items: center;
+        width: 92.5%;
+        margin-left: 50px;
+        margin-top: 30px;
+        text-align: left;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    .user-food-card .user-image{
+        height: 250px;
+    }
+    .user-food-card .user-image img{
+        height: 250px;
+        width: 300px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    .user-food-card .user-name{
+        height: 110px;
+        margin-left: 10px;
+        margin-top: -140px;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+    }
+    .user-food-card .user-name .res-name span{
+        font-size: 23px;
+    }
+    .user-food-card .user-name .res-name span a{
+        background: none;
+        text-decoration: none;
+        color: black;
+    } 
+    .user-food-card .user-name .stars span{
+        font-size: 17px;
+        margin-top: 5px;
+    }
+    .user-food-card .user-name .res-special{
+        color: gray;
+        font-weight: 400;
+    }
+    .user-food-card .res-des{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        line-height: 35px;
+    }*/
+
+
+
+    /* ======================= User Food Transactions=============== */
+
+
+    .item.userfoodtrans{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding-bottom: 60px;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+    .userfoodtrans .trans{
+        margin-top: 20px;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding: 10px;
+        padding-right: 230px;
+    }
+    .item.usertrans .trans center{
+        margin-top: 20px;
+    }
+
+    .usertrans .transres table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: scroll;
+        margin-top: 30px;
+    }
+    .trans table td,th{
+        border: 1px solid #ccc;
+        text-align: left;
+        padding: 17px;
+    }
+    .trans table tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    .trans table td .action-btns{
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .trans table td .edit a{
+        background: #0F52BA;
+        color: #fff;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    .trans table td .delete a{
+        background: red;
+        color: #fff;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    .trans table td a.pay{
+        text-decoration: none;
+        background: none;
+    }
+    .trans table td a.pay:hover{
+        text-decoration: underline;
+    }
+
+
+
+
+    /* ======================== Restaurants ================ */
+
+    .item.res{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+
+    .item.res .reslist{
+        margin-top: 10px;
+    }
+    .rslist{
+        display: flex;
+        justify-content: space-between;
+        height: 180px;
+        width: 83%;
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    }
+
+    .rslist .resbtn{
+        padding: 75px;
+    }
+    .rslist .resbtn a{
+        background: red;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 17px;
+        border-radius: 5px;
+    }
+    .resdetails{
+        width: 50%;
+    }
+    .reslist .name{
+        height: 50px;
+        padding: 10px;
+    }
+    .resdetails .name label{
+        font-size: 22px;
+        color: black;
+    }
+    .rating-items{
+        height: 50px;
+        padding: 10px;
+
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .rating-items .ratings{
+        margin-right: 20px;
+    }
+    .rating-items .ratings span{
+        font-size: 20px;
+    }
+    .rating-items .items span{
+        font-size: 20px;
+        color: black;
+    }
+    .resadd-time{
+        margin-top: 10px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    .resadd-time .res-add{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        width: 130px;
+        justify-content: space-between;
+    }
+    .res-add span{
+        color: black;
+    }
+    .time span{
+        color: black;
+    }
+    .resadd-time .mobile{
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .reslist .cards{
+        margin-top: 10px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        padding-bottom: 65px;
+        padding-right: 230px;
+    }
+    .reslist .cards .card1,
+    .reslist .cards .card2,
+    .reslist .cards .card3{
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    }
+
+    .card1 .card-title,
+    .card2 .card-title,
+    .card3 .card-title{
+        height: 50px;
+        padding-left: 10px;
+        padding-top: 20px;
+        text-align: left;
+    }
+    .card1 .card-title span,
+    .card2 .card-title span,
+    .card3 .card-title span{
+        font-size: 18px;
+    }
+    hr{
+        color: #aaaaaa;
+        margin: 8px;
+    }
+    .cards .card1 .card1r{
+        height: 50px;
+        padding-left: 10px;
+        padding-top: 12px;
+    }
+    .cards .card1 .card1r label{
+        font-size: 17px;
+    }
+    .card-rating{
+        margin-top: 50px;
+    }
+    .card-rating .card-title2{
+        margin: 20px 0px 20px 10px;
+    }
+    .card-rating .foodcard,
+    .card-rating .servicecard,
+    .card-rating .valuecard,
+    .card-rating .atmcard{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+    }
+    .card-rating .foodcard .det,
+    .card-rating .servicecard .det,
+    .card-rating .valuecard .det,
+    .card-rating .atmcard .det{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+
+    .card2 .cdet,
+    .card2 .sdet,
+    .card2 .mdet{
+        height: 70px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .card2 .cdet .cdet-title,
+    .card2 .sdet .sdet-title,
+    .card2 .mdet .mdet-title{
+        font-size: 20px;
+    }
+    .card2 .cdet .cdes,
+    .card2 .sdet .cdes,
+    .card2 .mdet .cdes{
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    .card3 iframe{
+        height: 250px;
+        padding: 20px;
+    }
+    .card3-add,
+    .card3-mail{
+        height: 40px;
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        padding-top: 8px;
+        padding-left: 10px;
+    }
+
+
+
+    /* ===================== Booking table ===================== */
+
+    .item.book{
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        padding: 8px;
+        overflow-y: scroll;
+        padding-bottom: 70px;
+    }
+    .booktable{
+        width: 100%;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding: 10px;
+        padding-right: 230px;
+    }
+    .booktable center h2{
+        margin-top: 10px;
+    }
+    .booktable form{
+        margin-top: 20px;
+        padding: 10px;
+    }
+    form .box-table{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    form .box-table label{
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .box-table input,
+    .box-table select{
+        height: 50px;
+        border: 1px solid #aaaaaa;
+        outline: none;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+    .book-btn{
+        margin-top: 20px;
+    }
+    .book-btn input{
+        height: 50px;
+        width: 100%;
+        border: none;
+        background: #0F52BA;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    .booktable .error-msg{
+        font-size: 17px;
+        margin: 5px 0;
+        display: block;
+        color: crimson;
+    }
+
+
+    /* ========================== User Trip Booking ========================= */
+
+    .item.user-trip{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+    .usertriplist{
+        width: 100%;
+        margin-top: 15px;
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding-right: 200px;
+        padding-bottom: 40px;
+    }
+
+    .usertriplist .top-trip .trip-pack-btn{
+        background: #0F52BA;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    .spl-packagelist{
+        padding-top: 30px;
+    }
+    .spl-pack{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 20px 0px;
+        padding: 10px;
+    }
+    .card-spl{
+        height: 310px;
+        background: #fff;
+        box-shadow: 0px 1px 2px 2px #aaaaaa;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 250px;
+        margin-right: 25px;
+    }
+    .card-spl .top{
+        height: 150px;
+    }
+    .card-spl .top img{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .card-spl .middle{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    } 
+    .card-spl .middle .name{
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    .card-spl .middle .des-pack{
+        text-align: left;
+        font-size: 0.9rem;
+        color: #707070;
+    }
+    .card-spl .middle .places{
+        display: flex;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+    .card-spl .bottom{
+        margin: 20px 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card-spl .bottom .book-pack{
+        background: crimson;
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .card-spl .bottom .view-pack{
+        font-size: 0.8rem;
+        transition: all 0.5s ease;
+    }
+    .card-spl .bottom .view-pack:hover{
+        text-decoration: underline;
+        color: #0F52BA;
+    }
+
+
+
+    .popular-packagelist{
+        margin-top: 50px;
+    }
+    .pop-pack{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .card-pop{
+        position: relative;
+        height: 320px;
+        background: #fff;
+        box-shadow: 0px 1px 2px 2px #aaaaaa;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 250px;
+        margin-right: 25px;
+        margin-bottom: 20px;
+    }
+    .card-pop .icons{
+        height: 50px;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+    }
+    .card-pop .icons button{
+        border: 1px solid #aaa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 50%;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        background: none;
+        color: #aaa;
+    }
+    .card-pop .icons button:nth-child(1):hover{
+        background: #0F52BA;
+        color: #fff;
+        border: none;
+    }
+    .card-pop .icons button:nth-child(2):hover{
+        background: red;
+        color: #fff;
+        border: none;
+    }
+
+    .card-pop .days{
+        height: 40px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+    }
+    .card-pop .days span{
+        background: #000;
+        color: #fff;
+        top: 130px;
+        left: 190px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .card-pop .top{
+        height: 150px;
+    }
+    .card-pop .top img{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .card-pop .middle{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 70px;
+    } 
+    .card-pop .middle .name{
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    .card-pop .middle .places{
+        display: flex;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    .card-pop .middle-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 20px;
+    }
+    .card-pop .middle-bottom span{
+        color: #aaa;
+    }
+    .card-pop .bottom{
+        margin: 20px 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card-pop .bottom .book-pop-pack{
+        background: crimson;
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .card-pop .bottom .view-pop-pack{
+        font-size: 0.8rem;
+        transition: all 0.5s ease;
+    }
+    .bottom .view-pop-pack:hover{
+        text-decoration: underline;
+        color: #0F52BA;
+    }
+
+
+
+    /* ===================== User View Special Packages ================ */
+
+    .item.user-view-spl{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 15px;
+        overflow-y: scroll;
+        padding-bottom: 60px;
+    }
+    .user_view{
+        width: 100%;
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding: 5px;
+        padding-bottom: 30px;
+    }
+    .user_view center{
+        margin-right: 220px;
+        padding: 20px 0px;
+    }
+    .user_view .image{
+        padding: 8px;
+        margin-right: 220px;
+    }
+    .user_view .image img{
+        height: 80vh;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .user_view .description{
+        padding: 8px;
+        padding-right: 230px;
+    }
+    .user_view .des2{
+        padding: 8px;
+        padding-right: 230px;
+    }
+    .user_view .btn{
+        margin-top: 30px;
+        padding: 8px;
+        text-align: center;padding-right: 230px;
+    }
+    .user_view .btn a{
+        background: crimson;
+        padding: 15px 15px;
+        border: none;
+        outline: none;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+
+
+
+    /* ===================== User View Popular Packages ================ */
+
+    .item.user-view-pop{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 15px;
+        overflow-y: scroll;
+    }
+    .user_view_pop{
+        width: 100%;
+        padding-right: 225px;
+        padding-bottom: 60px;
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    }
+    .user_view_pop label {
+        width: 100%;
+        text-align: center;
+    }
+    .user_view_pop .userview{
+       margin-top: 30px;
+    }
+
+    .userview .content{
+        margin-top: 20px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }
+    .userview .content .card{
+        margin-top: 10px;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0px 1px 2px 2px #aaa;
+    }
+    .userview .content .image{
+        height: 250px;
+    }
+    .userview .content .image img{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .userview .content .name{
+        margin: 10px;
+        text-align: center;
+        height: 50px;
+    }
+    .userview .content .card span{
+        font-size: 1rem;
+    }
+
+
+    .hotelscontent{
+        margin-top: 30px;
+    }
+    .hotelscontent h3{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .hotelscontent .card .price{
+        display: flex;
+        align-items: center;
+    }
+    .hotelscontent .card .price span{
+        background: none;
+        color: black;
+    }
+    .hotelscontent .content .name{
+        margin: 10px;
+        text-align: center;
+        height: 50px;
+    }
+    .hotelscontent .content .card .buttons{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 70px;
+    }
+    .hotelscontent .content .card .buttons a{
+        text-decoration: none;
+    }
+    .hotelscontent .content .card .buttons a:nth-child(1){
+        background: none;
+    }
+    .hotelscontent .content .card .buttons a:nth-child(1):hover{
+        text-decoration: underline;
+    }
+    .hotelscontent .content .card .buttons a:nth-child(2){
+        background: crimson;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .hotelscontent .content .card .buttons a:nth-child(2):hover{
+        text-decoration: underline;
+    }
+
+
+
+
+    /* =================== Trip Booking Page ======================= */
+
+    .item.userbook{
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        padding: 8px;
+        overflow-y: scroll;
+        padding-right: 240px;
+        padding-bottom: 80px;
+    }
+    .bookpack{
+        width: 100%;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    }
+    .bookpack center{
+        padding: 30px;
+    }
+    .bookpack form{
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .bookpack form .personal-book-details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .bookpack form .input-fields{
+        display: flex;
+        flex-direction: column;
+    }
+    .bookpack form .input-fields input{
+        height: 50px;
+        border: 1px solid #aaa;
+        outline: none;
+        border-radius: 5px;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+    .bookpack form .personal-booking-details{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .bookpack form .personal-booking-details select{
+        border: 1px solid #aaa;
+        height: 50px;
+        border-radius: 5px;
+        outline: none;
+        padding-left: 10px;
+        margin-top: 5px;
+    }
+    .bookpack form .personal-booking-details .buttonadd{
+        margin-top: 10px;
+    }
+    .bookpack form .personal-booking-details .buttonadd a{
+        background: #0F52BA;
+        padding: 10px;
+        border-radius: 5px;
+        color: #fff;
+    }
+    .bookpack form .form-group .duplicateform{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin-top: 20px;
+    }
+    .bookpack form .form-group .duplicateform .input-fields input{
+        width: 100%;
+    }
+    .bookpack form .form-group .duplicateform .button-field{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-top: 30px;
+        padding-right: 30px;
+    }
+    .bookpack form .form-group{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .bookpack form .form-group .duplicateform .button-field input{
+        background: red;
+        padding: 8px;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .bookpack .form-hotels{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .bookpack .form-hotels select{
+        height: 50px;
+        border: 1px solid #aaa;
+        outline: none;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    .bookpack .form-res .input-fields:nth-child(2){
+        margin-top: 25px;
+    }
+
+    .bookpack .form-res{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .bookpack .form-res select{
+        height: 50px;
+        border: 1px solid #aaa;
+        outline: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    .bhotelname{
+        display: none;
+    }
+    .bresname{
+        display: none;
+    }
+
+    .bookpack form .submit-btn{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .bookpack form .submit-btn button{
+        padding: 15px 20px;
+        background: #0F52BA;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    /* .booktable form{
+        padding: 10px;
+    }
+    form .box-table{
+        display: flex;
+        flex-direction: column;
+    }
+    form .box-table label{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .box-table input,
+    .box-table select{
+        height: 50px;
+        border: 1px solid #aaaaaa;
+        outline: none;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    .book-btn{
+        margin-top: 20px;
+    }
+    .book-btn input{
+        height: 50px;
+        width: 100%;
+        border: none;
+        background: #0F52BA;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    .booktable .error-msg{
+        font-size: 17px;
+        margin: 5px 0;
+        display: block;
+        color: crimson;
+    } */
+
+
+
+
+    /* ========================== Hotels View Page ==================== */
+
+  
+    .item.user-hotel{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+    .item.user-hotel .user-hotel-container{
+        width: 100%;
+        margin-top: 15px;
+        background: #fff;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding-bottom: 60px;
+        padding-right: 200px;
+    }
+    .item.user-hotel .user-hotel-container::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .item.user-hotel .user-hotel-container .filters{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .item.user-hotel .user-hotel-container .filters input{
+        margin: 50px;
+        width: 60%;
+        height: 50px;
+        outline: none;
+        border: 1px solid #aaa;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+    .item.user-hotel .user-hotel-container .filters a{
+        text-decoration: none;
+    }
+    .item.user-hotel .user-hotel-container .filters a:hover{
+        background: none;
+    }
+    .user-hotel-list-container{
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hotel-user-card{
+        height: 250px;
+        display: flex;
+        background: #fff;
+        margin: 30px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .hotel-user-card:hover{
+        background: none;
+    }
+    .hotel-user-card .left img{
+        height: 250px;
+        border-radius: 5px;
+        width: 300px;
+    }      
+    .hotel-user-card .middle{
+        width: 100%;
+        text-align: left;
+        margin: 5px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hotel-user-card .middle .hname{
+        font-size: 1rem;
+        color: #aaa;
+    }
+    .hotel-user-card .middle .hdesc{
+        font-size: 0.8rem;
+    }
+    .hotel-user-card .middle .hmail{
+        font-size: 1rem;
+        color: #aaa;
+    }
+    .hotel-user-card .middle .hadd{
+        font-size: 1rem;
+        color: #aaa;
+    }
+
+    .hotel-user-card .right{
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+    }
+    .hotel-user-card .right a{
+        background: crimson;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+
+
+    /* ======================== User Hotel Booking Transcations ============== */
+    
+    .item.userhoteltrans{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+    .userhoteltrans .trans-hotel{
+        width: 100%;
+        margin-top: 20px;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding: 8px;
+        overflow-x: scroll;
+        padding-right: 230px;
+        padding-bottom: 60px;
+    }
+
+    /* .item.userhoteltrans .trans-hotel{
+        background: red;
+    } */
+    .item.userhoteltrans .trans-hotel center{
+        margin-top: 20px;
+    }
+    .item.userhoteltrans .trans-hotel .transhotel{
+        margin-top: 30px;
+        overflow-x: scroll;
+    }
+    .transhotel table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: scroll;
+        margin-top: 20px;
+    }
+    .transhotel table td,th{
+        border: 1px solid #ccc;
+        text-align: left;
+        padding: 17px;
+    }
+    .transhotel table tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+/* 
+    .userhoteltrans .transhotel table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: scroll;
+        margin-top: 30px;
+    }
+    .trans-hotel table td,th{
+        border: 1px solid #ccc;
+        text-align: left;
+        padding: 17px;
+    }
+    .trans-hotel table tr:nth-child(even) {
+        background-color: #dddddd;
+    } */
+    .trans-hotel table td .action-btns{
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .trans-hotel table td .delete a{
+        background: red;
+        color: #fff;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+
+
+
+    /* =================== Hotel Booking Page ======================= */
+
+    .item.userhotelbook{
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        padding: 8px;
+        overflow-y: scroll;
+        padding-right: 240px;
+        padding-bottom: 80px;
+    }
+    .userhotelbook .bookhotel{
+        width: 100%;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    }
+    .userhotelbook .bookhotel center{
+        padding: 30px;
+    }
+    .userhotelbook .bookhotel form{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .userhotelbook .bookhotel form .bookpersonal{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .userhotelbook .bookhotel form .book-hotel-box{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .userhotelbook .bookhotel form .book-hotel-box input{
+        height: 50px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        padding-left: 10px;
+        outline: none;
+    }
+    .userhotelbook .bookhotel form .book-hotel-box select{
+        height: 50px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        padding-left: 10px;
+        outline: none;
+    }
+    .bookdetails{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        margin-top: 20px;
+    }
+    .userhotelbook .bookhotel form .submit-btn{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .userhotelbook .bookhotel form .submit-btn button{
+        padding: 15px 20px;
+        background: #0F52BA;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+
+    /* =================== Special Package Trip Booking Page ======================= */
+
+    .item.usersplbook{
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        padding: 8px;
+        overflow-y: scroll;
+        padding-right: 240px;
+        padding-bottom: 80px;
+    }
+    .booksplpack{
+        width: 100%;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    }
+    .booksplpack center{
+        padding: 30px;
+    }
+    .booksplpack form{
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .booksplpack form .personal-book-details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .booksplpack form .input-fields{
+        display: flex;
+        flex-direction: column;
+    }
+    .booksplpack form .input-fields input{
+        height: 50px;
+        border: 1px solid #aaa;
+        outline: none;
+        border-radius: 5px;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+    .booksplpack form .personal-booking-details{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .booksplpack form .personal-booking-details select{
+        border: 1px solid #aaa;
+        height: 50px;
+        border-radius: 5px;
+        outline: none;
+        padding-left: 10px;
+        margin-top: 5px;
+    }
+    .booksplpack form .personal-booking-details .buttonadd{
+        margin-top: 43px;
+    }
+    .booksplpack form .personal-booking-details .buttonadd a{
+        background: #0F52BA;
+        padding: 12px 10px;
+        border-radius: 5px;
+        color: #fff;
+    }
+    .booksplpack form .form-group .duplicateform{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin-top: 20px;
+    }
+    .booksplpack form .form-group .duplicateform .input-fields input{
+        width: 100%;
+    }
+    .booksplpack form .form-group .duplicateform .button-field{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-top: 30px;
+        padding-right: 30px;
+    }
+    .booksplpack form .form-group{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .booksplpack form .form-group .duplicateform .button-field input{
+        background: red;
+        padding: 8px;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+    }
+ 
+
+    .booksplpack form .submit-btn{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .booksplpack form .submit-btn button{
+        padding: 15px 20px;
+        background: #0F52BA;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+    }
+    .booksplpack form .personal-declaration{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .booksplpack form .declaration{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+    .booksplpack form .declaration .input-fields:nth-child(2){
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+
+
+
+    /* ================= Edit Table Page ==================== */
+
+    .item.edit{
+        position: fixed;
+        margin-top: 70px;
+        margin-left: 250px;
+        height: 100vh;
+        width: 100%;
+        padding: 8px;
+        padding-bottom: 60px;
+        overflow: scroll;
+    }
+    .item.edit .edittable{
+        background: #fff;
+        margin-top: 20px;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding: 10px;
+    }
+
+
+
+
+
+
+    /* ========================= User Transcations Page ================ */
+
+    
+    .item.usertrans{
+        height: 100vh;
+        width: 100%;
+        margin-left: 250px;
+        margin-top: 70px;
+        position: fixed;
+        padding: 8px;
+        overflow-y: scroll;
+    }
+    .usertrans .trans{
+        margin-top: 20px;
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 0px 5px 0px  #aaaaaa;
+        padding: 10px;
+        padding-right: 230px;
+        padding-bottom: 70px;
+    }
+    .item.usertrans .trans center{
+        margin-top: 20px;
+    }
+
+    .usertrans .triptrans table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: scroll;
+        margin-top: 30px;
+    }
+    .triptrans table td,th{
+        border: 1px solid #ccc;
+        text-align: left;
+        padding: 17px;
+    }
+    .triptrans table tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    .item.trans .triptrans tbody td a{
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .item.usertrans .triptrans tbody td a:hover{
+        background: none;
+    }
+    .item.usertrans .triptrans tbody td a:nth-child(1){
+        color: #0F52BA;
+    }
+    .item.usertrans .triptrans tbody td a:nth-child(2){
+        color: crimson;
+    }
+
+
+    .item.usertrans .trans .spltrans{
+        margin-top: 50px;
+        overflow-x: scroll;
+    }
+    .spltrans table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: scroll;
+        margin-top: 30px;
+    }
+    .spltrans table td,th{
+        border: 1px solid #ccc;
+        text-align: left;
+        padding: 17px;
+    }
+    .spltrans table tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    /* .item.trans .triptrans tbody td a{
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .item.usertrans .triptrans tbody td a:hover{
+        background: none;
+    }
+    .item.usertrans .triptrans tbody td a:nth-child(1){
+        color: #0F52BA;
+    }
+    .item.usertrans .triptrans tbody td a:nth-child(2){
+        color: crimson;
+    } */
+
+    .item.usertrans .trans .spltrans tbody td a{
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+
+
+
+/* ========================= Restaurant Page ========================= */
+
+.item.resdashboard{
+    height: 100vh;
+    width: 100%;
+    margin-left: 270px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-right: 50px;
+    padding-bottom: 25px;
+}
+
+.item.resdashboard .resdashboardcards{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    grid-gap: 20px;
+}
+.resdashboardcards .card{
+    background: #fff;
+    border-radius: 10px;
+    width: 255px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+}
+.resdashboardcards .card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+.resdashboardcards .card .card-content .icon{
+    font-size: 30px;
+}
+.resdashboardcards .card .card-content .text{
+    font-size: 18px;
+    margin-top: 20px;
+}
+.resdashboardcards .card .count{
+    width: 100%;
+    text-align: right;
+}
+.resdashboardcards .card .count .numbercount{
+    font-size: 20px;
+}
+
+
+
+
+
+/* ========================= Restaurant Food Items ========================= */
+
+.item.addfood{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.addfood-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 10px;
+    padding-right: 250px;
+}
+.addfood-container .filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+.addfood-container .filters input{
+    border: 1px solid #aaa;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.addfood-container .filters .btn a{
+    text-decoration: none;
+    background: #0F52BA;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.addfood-container table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.addfood-container table td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.addfood-container table tr:nth-child(even){
+    background-color: #dddddd;
+}
+.addfood-container table tbody td a{
+    text-decoration: none;
+}
+.addfood-container table tbody td a:nth-child(1){
+    background: #0F52BA;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+.addfood-container table tbody td a:nth-child(2){
+    background: crimson;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+
+
+
+/* ========================= Restaurant Table ========================= */
+
+.item.table{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.table-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 10px;
+    padding: 10px;
+}
+.table-container .tables-list{
+    padding-right: 240px;
+}
+.table-container .filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+.table-container .filters input{
+    border: 1px solid #aaa;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.table-container .filters a{
+    text-decoration: none;
+}
+.table-container .filters a:hover{
+    text-decoration: underline;
+    background: none;
+}
+
+.table-container table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.table-container table td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.table-container table tr:nth-child(even){
+    background-color: #dddddd;
+}
+.table-container table tbody td a{
+    text-decoration: none;
+}
+.table-container table tbody td a:nth-child(1){
+    background: #0F52BA;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+.table-container table tbody td a:nth-child(2){
+    background: red;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+.table-container table tbody td a:nth-child(3){
+    background: crimson;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+
+
+
+
+.item.addmenutable{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.addmenutable .menu-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 5px;
+    padding: 20px;
+}
+.addmenutable .items{
+    padding-right: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.addmenutable input{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    outline: none;
+    padding-left: 10px;
+}
+.addmenutable select{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    outline: none;
+    padding-left: 10px;
+}
+.item-box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.addmenutable select#itemtype{
+    height: 80px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    outline: none;
+    padding-left: 10px;
+}
+.addmenutable select#itemname{
+    height: 130px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    outline: none;
+    padding-left: 10px;
+}
+
+button{
+    background: #0F52BA;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px;
+}
+
+.menu-container .item-box{
+    margin-top: 2px;
+}
+.menu-container .item-box button{
+    width: 100%;
+}
+
+
+
+
+
+/* ========================= Restaurant Edit Table ========================= */
+
+.item.edittable{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.edittable-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 10px;
+    padding-right: 250px;
+}
+.edittable-container form{
+    padding: 5px;
+}
+.edittable-container .table-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.edittable-container .table-box input{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+}
+.edittable-container .table-box select{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+}
+.edittable-container form .btn-table{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+.edittable-container form .btn-table button{ 
+    background: #0F52BA;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+/* ======================= Restaurant Table Transactions ========== */
+
+.item.restrans{
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 250px;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    padding-bottom: 60px;
+    overflow: scroll;
+}
+.item.restrans .restauranttrans{
+    margin-top: 20px;
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 10px;
+}
+.item.restrans .restauranttrans center{
+    margin-top: 20px;
+}
+.item.restrans .restauranttrans .recents{
+    overflow-x: scroll;
+    padding-right: 230px;
+}
+.item.restrans .restauranttrans .recents a{
+    background: #0F52BA;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.restauranttrans table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    margin-top: 30px;
+}
+.restauranttrans table td,th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.restauranttrans table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+
+/* ============================= Restaurant Profile Section ============================= */
+
+.item.resprofile{
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 260px;
+    padding-bottom: 90px;
+}
+.resprofile .respersonal{
+    height: 450px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 2px #aaaaaa;
+    padding: 20px;
+    text-align: center;
+}
+.respersonal .personal_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 60px;
+}
+.personal_info label{
+    font-size: 17px;
+    margin-right: 20px;
+}
+.respersonal img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.respersonal .btn-update{
+    margin-top: 20px;
+}
+.respersonal .btn-update a{
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    width: 100px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* ===================== Restaurant Update Profile Page ================== */
+
+.update-profile{
+    padding: 15px;
+    width: 100%;
+    padding-right: 20px;
+    background: #fff;
+    text-align: center;
+    margin-top: 5px;
+    box-shadow: 0px 1px 2px 2px #aaaaaa;
+    border-radius: 5px;
+}
+
+.update-profile img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.update-profile form{
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    padding-left: 100px;
+}
+form .input-box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+form .input-box .box{
+    height: 45px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+    font-size: 17px;
+}
+form .input-box input{
+    height: 50px;
+    width: 80%;
+    margin-top: 10px;
+    background: #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 17px;
+}
+form .btn{
+    position: relative;
+    margin-top: 100px;
+    margin-left: -500px;
+}
+form .btn input{
+    padding: 15px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.update-profile .error-msg{
+    font-size: 17px;
+    margin: 10px 0;
+    display: block;
+    color: crimson;
+    border-radius: 5px;
+    background: red;
+    padding: 10px;
+    color: #fff;
+}
+
+.item.update{
+    padding-top: 80px;
+    padding-left: 270px;
+}
+
+
+
+
+
+/* ============================ Restaurant Edit transactions Page ================ */
+
+.item.editrestrans{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.editrestrans-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 10px;
+    padding-right: 250px;
+}
+.editrestrans-container form{
+    padding: 5px;
+}
+.editrestrans-container .hotel-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.editrestrans-container .hotel-box input{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+}
+.editrestrans-container .hotel-box select{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+}
+.editrestrans-container form .btn-hotel{
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+}
+.editrestrans-container form .btn-hotel button{ 
+    background: #0F52BA;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.editrestrans-container .res-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+
+}
+.editrestrans-container .res-box input{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+}
+
+
+
+
+
+/* =========================== Hotel Profile Page ==================== */
+
+
+.item.hotelprofile{
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    padding-right: 260px;
+    padding-bottom: 90px;
+}
+.hotelprofile .hotelpersonal{
+    height: 450px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 2px #aaaaaa;
+    padding: 20px;
+    text-align: center;
+}
+.hotelpersonal .personal_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 60px;
+}
+.personal_info label{
+    font-size: 17px;
+    margin-right: 20px;
+}
+.hotelpersonal img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.hotelpersonal .btn-update{
+    margin-top: 20px;
+}
+.hotelpersonal .btn-update a{
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #0F52BA;
+    color: #fff;
+    width: 100px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+
+
+/* =========================== Hotel Rooms Page ==================== */
+
+
+.item.hotelrooms{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.hotelrooms-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 10px;
+    padding-right: 250px;
+}
+.hotelrooms-container .filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+.hotelrooms-container .filters input{
+    border: 1px solid #aaa;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+
+.hotelrooms-container table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.hotelrooms-container table td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.hotelrooms-container table tr:nth-child(even){
+    background-color: #dddddd;
+}
+.hotelrooms-container table tbody td a{
+    text-decoration: none;
+}
+.hotelrooms-container table tbody td a:nth-child(1){
+    background: #0F52BA;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+.hotelrooms-container table tbody td a:nth-child(2){
+    background: crimson;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+
+/* ============================ Hotel Edit Rooms Page ================ */
+
+.item.editrooms{
+    height: 100vh;
+    width: 100%;
+    margin-left: 260px;
+    position: fixed;
+    margin-top: 80px;
+    overflow-y: scroll;
+    padding-bottom: 85px;
+}
+.editrooms-container{
+    background: #fff;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    margin-top: 10px;
+    padding-right: 250px;
+}
+.editrooms-container form{
+    padding: 5px;
+}
+.editrooms-container .hotel-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.editrooms-container .hotel-box input{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+}
+.editrooms-container .hotel-box select{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+}
+.editrooms-container form .btn-hotel{
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+}
+.editrooms-container form .btn-hotel button{ 
+    background: #0F52BA;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+
+/* ======================== Hotel Transactions Page ==================== */
+
+.item.htrans{
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 250px;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    padding-bottom: 60px;
+    overflow: scroll;
+}
+.item.htrans .hoteltrans{
+    margin-top: 20px;
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+    padding: 10px;
+    padding-right: 230px;
+}
+.item.htrans .hoteltrans center{
+    margin-top: 20px;
+}
+.item.htrans .hoteltrans .hbookingtrans{
+    margin-top: 20px;
+    overflow-x: scroll;
+}
+.hoteltrans table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+.hoteltrans table td,th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+.hoteltrans table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.hoteltrans table tbody td a{
+    background: #0F52BA;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+
+/* =================== Hotel Login Edit Booking Page ======================= */
+
+.item.hhotelbook{
+    margin-left: 250px;
+    margin-top: 70px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    padding: 8px;
+    overflow-y: scroll;
+    padding-right: 240px;
+    padding-bottom: 80px;
+}
+.hhotelbook .edithotel{
+    width: 100%;
+    background: #fff;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 0px  #aaaaaa;
+}
+.hhotelbook .edithotel center{
+    padding: 30px;
+}
+.hhotelbook .edithotel form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.hhotelbook .edithotel form .editbookpersonal{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.hhotelbook .edithotel form .book-edit-hotel-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.hhotelbook .edithotel form .book-edit-hotel-box input{
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+}
+.hhotelbook .edithotel form .book-edit-hotel-box select{
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+}
+.hhotelbook .edithotel .bookdetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+/* .responsedetails{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+} */
+.remarks-box{
+    display: none;
+}
+.hhotelbook .edithotel form .submit-btn{
+    text-align: center;
+    margin-top: 20px;
+}
+.hhotelbook .edithotel form .submit-btn button{
+    padding: 15px 25px;
+    background: #0F52BA;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
